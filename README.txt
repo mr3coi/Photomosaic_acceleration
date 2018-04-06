@@ -1,16 +1,40 @@
-================================== README by Sung Jun Choi =================================
+================================== README (for Github) =================================
 
-1. 'cifar-10.bin' file should be located in 'data' directory.
-Refer to the end of the report for details.
+This is a class final project on accelerating a naive sequential implementation of
+a program that generates a photomosaic output from an input image using images from
+the CIFAR-10 dataset, under various circumstances described below:
 
-2. It is recommended to have input files named 'inputX.bmp' (X:number) placed in 'data' directory.
-Then it is possible to run any program among A~E by simply entering in console:
-	
-	make run NUM=X
+A) Single machine, CPU only
+B) Single machine, single GPU
+C) Single machine, 4 GPUs
+D) 4 nodes on a server, 4 GPUs
+E) 4 nodes on a server, 4 GPUs, using SnuCL mandatory
 
-Furthermore, having output reference files named 'outputX.bmp' in the same folder
-makes it possible to run the following command in console to check identity:
+Algorithmic approach of any sort is not allowed - only acceleration via parallel
+computing techniques is allowed.
 
-	make check NUM=X
+Requirements (may have more):
+- OpenCL 2.0
+- OpenMP 3.1
+- MPI
+- SnuCL (for E) - refer to aces.snu.ac.kr
+
+To run example cases (within each subdirectory A~E):
+	make
+	./main ../data/inputX.bmp ./output/outputX.bmp (X: 0/1)
+
+Note:
+- Only 24-Bit BMP files are allowed as inputs.
+- Ignore the parts in Makefiles w/ 'thorq's, as they are specifically for the environment
+	students used during class.
+- The codes have been run on AMD GPUs and thus do not exploit CUDA or related libraries.
+- cifar-10 binary dataset has been removed due to file size limits. Should originally
+	be located in 'data' folder, with name 'cifar-10.bin'.
+
+Important:
+- This repository is solely for archiving purpose.
+	Running the code outside the environment provided during class has not been tested,
+	so it is NOT recommended to try running the codes in your computer.
+	(You may try and debug on your own if you wish)
 
 ============================================================================================
