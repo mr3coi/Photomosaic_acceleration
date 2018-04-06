@@ -21,7 +21,7 @@ Requirements (may have more):
 
 To run example cases (within each subdirectory A~E):
 	make
-	./main ../data/inputX.bmp ./output/outputX.bmp (X: 0/1)
+	./main ../example/inputX.bmp ./output/outputX.bmp (X: 0/1)
 
 Note:
 - Only 24-Bit BMP files are allowed as inputs.
